@@ -25,7 +25,6 @@ public class Person {
     private String firstName;
 
     @OneToOne(orphanRemoval=true, cascade={CascadeType.PERSIST, CascadeType.REMOVE}, fetch=FetchType.LAZY)
-    @JoinColumn(name = "LOGINACCOUNT_ID", foreignKey = @ForeignKey())
     private LoginAccount loginAccount = new LoginAccount();
 
     public Person() {

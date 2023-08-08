@@ -23,11 +23,9 @@ public class LoginAccount {
     private String name;
 
     @OneToOne(orphanRemoval=true, cascade= CascadeType.ALL, fetch= FetchType.LAZY)
-    @JoinColumn(name = "ACCOUNTPREFERENCES_ID", foreignKey = @ForeignKey())
     private AccountPreferences accountPreferences = new AccountPreferences();
 
     @OneToOne(mappedBy = "loginAccount")
-    @JoinColumn(name = "OWNER_ID", foreignKey = @ForeignKey())
     private Person owner;
 
     public void setOwner(Person owner) {
